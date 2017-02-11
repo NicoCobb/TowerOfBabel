@@ -6,9 +6,8 @@ public class SpiderControl : MonoBehaviour {
 
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the enemy is currently facing.
-
 	public float moveForce = 365f;			// Amount of force added to move the enemy left and right.
-	public float maxSpeed = 5f;				// The fastest the enemy can travel in the x axis.
+	public float speed = 6f;
 
 	private Animator anim;					// Reference to the enemy's animator component.
 
@@ -16,39 +15,24 @@ public class SpiderControl : MonoBehaviour {
 	void Start () 
 	{
 		// Setting up references.
+		GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0);
 		anim = GetComponent<Animator>();
 	}
 
 	void Update ()
 	{
-
+		GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Sign(GetComponent<Rigidbody2D> ().velocity.x) * speed, GetComponent<Rigidbody2D> ().velocity.y);
 	}
 
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		// Cache the horizontal input.
-		float h = Input.GetAxis("Horizontal");
-
-		// The Speed animator parameter is set to the absolute value of the horizontal input.
-		anim.SetFloat("Speed", Mathf.Abs(h));
-
-		// If the enemy is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if(h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
-			// ... add a force to the enemy.
-			GetComponent<Rigidbody2D>().AddForce(Vector2.right * h * moveForce);
-
-		// If the enemy's horizontal velocity is greater than the maxSpeed...
-		if(Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > maxSpeed)
-			// ... set the enemy's velocity to the maxSpeed in the x axis.
-			GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x) * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
 		// If the input is moving the enemy right and the enemy is facing left...
-		if(h > 0 && !facingRight)
+		if(Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x) > 0 && !facingRight)
 			// ... flip the enemy.
 			Flip();
 		// Otherwise if the input is moving the enemy left and the enemy is facing right...
-		else if(h < 0 && facingRight)
+		else if(Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x) < 0 && facingRight)
 			// ... flip the enemy.
 			Flip();
 	}
@@ -62,5 +46,11 @@ public class SpiderControl : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	public void ChangeDirection()
+	{
+		//Changes direction, duh
+		GetComponent<Rigidbody2D> ().velocity = new Vector2(-GetComponent<Rigidbody2D> ().velocity.x, GetComponent<Rigidbody2D> ().velocity.y);
 	}
 }
