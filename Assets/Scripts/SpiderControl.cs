@@ -10,8 +10,6 @@ public class SpiderControl : MonoBehaviour {
 	public float moveForce = 365f;			// Amount of force added to move the enemy left and right.
 	public float maxSpeed = 5f;				// The fastest the enemy can travel in the x axis.
 
-	private Transform groundCheck;			// A position marking where to check if the enemy is grounded.
-	private bool grounded = false;			// Whether or not the enemy is grounded.
 	private Animator anim;					// Reference to the enemy's animator component.
 
 	// Use this for initialization
