@@ -16,7 +16,6 @@ public class SpiderControl : MonoBehaviour {
 	void Start () 
 	{
 		// Setting up references.
-		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
 	}
 
