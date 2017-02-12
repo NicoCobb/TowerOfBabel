@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatSpawner : MonoBehaviour {
+public class SpiderSpawner : MonoBehaviour {
 
-	public GameObject bat;
+	public GameObject spider;
 	public GameObject levelManager;
 
 	// Use this for initialization
@@ -15,8 +15,7 @@ public class BatSpawner : MonoBehaviour {
 		float chance = levelControl.spawnChance ();
 		float roll = Random.Range (0f, 100f);
 		if (roll < chance) {
-			Instantiate (bat, new Vector3 (this.transform.position.x, this.transform.position.y, 0), Quaternion.identity);
-			levelControl.numOfSpawners += 1;
+			Instantiate (spider, new Vector3 (this.transform.position.x, this.transform.position.y, 0), Quaternion.identity);
 		}
 	}
 }
