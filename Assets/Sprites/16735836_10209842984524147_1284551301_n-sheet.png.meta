@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 5289218bfa54b1046994ad67f9bb4f59
-timeCreated: 1486862937
+guid: 7fbeeb07e8c7c4adfa510386c5b276f4
+timeCreated: 1486862665
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: 16736353_10209842760278541_751554182_n-sheet_0
-    21300002: 16736353_10209842760278541_751554182_n-sheet_1
+  fileIDToRecycleName: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -36,7 +34,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -60,43 +58,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: 16736353_10209842760278541_751554182_n-sheet_0
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 8
-        width: 24
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: 16736353_10209842760278541_751554182_n-sheet_1
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 8
-        width: 25
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
   spritePackingTag: 
   userData: 
