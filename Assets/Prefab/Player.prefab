@@ -161,4 +161,4 @@ MonoBehaviour:
   moveForce: 365
   maxSpeed: 5
   jumpClips: []
-  jumpForce: 1000
+  jumpForce: 500

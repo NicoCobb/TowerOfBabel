@@ -18,6 +18,5 @@ public class InvisibleWall : MonoBehaviour {
 		if (coll.gameObject.tag == "Spider") {
 			coll.gameObject.GetComponent<SpiderControl> ().ChangeDirection();
 		}
-		print ("FUCK YOU");
 	}
 }
