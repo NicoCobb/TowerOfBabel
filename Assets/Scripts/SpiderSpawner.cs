@@ -9,6 +9,9 @@ public class SpiderSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Spawn ();
+	}
+	public void Spawn () {
 		levelManager = GameObject.Find ("LevelManager");
 		LevelManagerScript levelControl = levelManager.GetComponent<LevelManagerScript> ();
 		levelControl.numOfSpawners += 1;

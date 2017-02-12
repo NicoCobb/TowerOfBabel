@@ -7,8 +7,11 @@ public class BatSpawner : MonoBehaviour {
 	public GameObject bat;
 	public GameObject levelManager;
 
-	// Use this for initialization
-	void Start () {
+	// Use this for initializationvoid Start () {
+	void Start(){
+		Spawn ();
+	}
+	void Spawn () {
 		levelManager = GameObject.Find ("LevelManager");
 		LevelManagerScript levelControl = levelManager.GetComponent<LevelManagerScript> ();
 		levelControl.numOfSpawners += 1;

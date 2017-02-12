@@ -13,13 +13,9 @@ public class LevelManagerScript : MonoBehaviour {
 	public int totalLevels = 1;
 	public int levelChosen;
 	public GameObject Level1;
-	public GameObject Level2;
 	public GameObject[] Spiders;
-	public GameObject[] Bats;
-	public GameObject[] Players;
-	public GameObject player;
-	public GameObject[] DoorStarts;
-	public GameObject doorStart;
+	public GameObject Player;
+	public GameObject DoorStart;
 
 	// Use this for initialization
 	void Start () {
@@ -33,50 +29,33 @@ public class LevelManagerScript : MonoBehaviour {
 		createLevel();
 	}
 
-	void FixedUpdate () {
-		Players = GameObject.FindGameObjectsWithTag ("Player");
-		DoorStarts = GameObject.FindGameObjectsWithTag ("DoorStart");
-
-		if (Players.Length < 1 && DoorStarts.Length > 0) {
-			doorStart = GameObject.FindGameObjectWithTag ("DoorStart");
-			Instantiate (player, doorStart.transform.position, Quaternion.identity);
-			player = GameObject.FindGameObjectWithTag ("Player");
-		}
-	}
-
 	void createLevel() {
 		if (levelChosen == 1) {
 			Instantiate (Level1, new Vector3 (0, 0, 0), Quaternion.identity);
 		}
-		if (levelChosen == 2) {
-			Instantiate (Level2, new Vector3 (0, 0, 0), Quaternion.identity);
-		}
+		Player = GameObject.FindGameObjectWithTag ("Player");
+		DoorStart = GameObject.FindGameObjectWithTag ("DoorStart");
+		Player.transform.position = new Vector3(DoorStart.transform.position.x,DoorStart.transform.position.y,DoorStart.transform.position.z-1);
 	}
 
 	public void endLevel(){
+		totalLevels++;
 		Spiders = GameObject.FindGameObjectsWithTag ("Spider");
-		Bats = GameObject.FindGameObjectsWithTag ("Bat");
 
 		for(int i = 0; i < Spiders.Length; i ++){
 			Destroy(Spiders[i]);
 		}
-		for(int i = 0; i < Bats.Length; i ++){
-			Destroy(Bats[i]);
+
+		Player = GameObject.FindGameObjectWithTag ("Player");
+		DoorStart = GameObject.FindGameObjectWithTag ("DoorStart");
+		Player.transform.position = new Vector3(DoorStart.transform.position.x,DoorStart.transform.position.y,DoorStart.transform.position.z-1);
+
+		numOfSpawners = 0;
+		Spiders = GameObject.FindGameObjectsWithTag ("SpiderSpawner");
+		for(int i = 0; i < Spiders.Length; i ++){
+			SpiderSpawner spiderSpawnControl = Spiders[i].GetComponent<SpiderSpawner> ();
+			spiderSpawnControl.Spawn();
 		}
-		if (levelChosen == 1) {
-			Destroy(Level1);
-		}
-		if (levelChosen == 2) {
-			Destroy (Level2);
-		}
-		int currentLevel = levelChosen;
-		while (levelChosen == currentLevel){
-			int randomInt = Random.Range (0, numberOfLevels);
-			print (randomInt);
-			levelChosen = levels [randomInt];
-		}
-		createLevel();
-		player.transform.position = doorStart.transform.position;
 	}
 
 	public float spawnChance(){
