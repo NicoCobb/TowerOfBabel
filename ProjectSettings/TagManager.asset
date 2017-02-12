@@ -9,6 +9,7 @@ TagManager:
   - Bat
   - SpiderSpawner
   - DoorStart
+  - Brick
   layers:
   - Default
   - TransparentFX

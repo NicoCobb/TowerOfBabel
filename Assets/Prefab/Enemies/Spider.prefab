@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingRight: 1
   moveForce: 365
-  speed: 4
+  speed: 3
 --- !u!212 &212940661875067158
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -91,6 +91,52 @@ NavMeshSettings:
     cellSize: 0.16666667
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &76165525
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4969658089278944, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 15.313717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969658089278944, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.337004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969658089278944, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969658089278944, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969658089278944, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969658089278944, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969658089278944, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969658089278944, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245880281768874, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 130534e2f5c8b45379449f0fad83e968, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &808457826
 Prefab:
   m_ObjectHideFlags: 0
@@ -130,14 +176,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 95949613894720668, guid: 3ef984a4496ea54449f951628df70d52,
+    - target: {fileID: 114960345813306096, guid: 3ef984a4496ea54449f951628df70d52,
         type: 2}
-      propertyPath: m_Controller
+      propertyPath: brick
       value: 
-      objectReference: {fileID: 9100000, guid: 1b7fe08fa6cbd4c0181d8832cbb55189, type: 2}
+      objectReference: {fileID: 1470611337}
+    - target: {fileID: 114960345813306096, guid: 3ef984a4496ea54449f951628df70d52,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1846753090280440, guid: 3ef984a4496ea54449f951628df70d52,
+        type: 2}
+    - target: {fileID: 114960345813306096, guid: 3ef984a4496ea54449f951628df70d52,
+        type: 2}
+      propertyPath: brickSpawn
+      value: 
+      objectReference: {fileID: 1402190317}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ef984a4496ea54449f951628df70d52, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &808457827 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4375770100257272, guid: 3ef984a4496ea54449f951628df70d52,
+    type: 2}
+  m_PrefabInternal: {fileID: 808457826}
 --- !u!1 &914740433 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1846753090280440, guid: 3ef984a4496ea54449f951628df70d52,
@@ -186,10 +248,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4067072429994428, guid: bb421d46501a8480ba88fd6977b0ba1e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 44.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb421d46501a8480ba88fd6977b0ba1e, type: 2}
   m_IsPrefabParent: 0
@@ -198,6 +256,39 @@ GameObject:
   m_PrefabParentObject: {fileID: 1170871097175264, guid: bb421d46501a8480ba88fd6977b0ba1e,
     type: 2}
   m_PrefabInternal: {fileID: 1163065370}
+--- !u!1 &1402190317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1402190318}
+  m_Layer: 0
+  m_Name: BrickSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1402190318
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1402190317}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.11200001, y: 0.065, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 808457827}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1470611337 stripped
+Rigidbody2D:
+  m_PrefabParentObject: {fileID: 50443871991874020, guid: 130534e2f5c8b45379449f0fad83e968,
+    type: 2}
+  m_PrefabInternal: {fileID: 76165525}
 --- !u!1001 &1733901279
 Prefab:
   m_ObjectHideFlags: 0

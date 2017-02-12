@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpiderControl : MonoBehaviour {
 
@@ -52,5 +53,11 @@ public class SpiderControl : MonoBehaviour {
 	{
 		//Changes direction, duh
 		GetComponent<Rigidbody2D> ().velocity = new Vector2(-GetComponent<Rigidbody2D> ().velocity.x, GetComponent<Rigidbody2D> ().velocity.y);
+	}
+
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "Player") {
+			SceneManager.LoadScene (1);
+		}
 	}
 }
