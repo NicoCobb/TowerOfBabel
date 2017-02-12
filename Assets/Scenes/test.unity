@@ -218,28 +218,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!1 &666090572 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1830042611948530, guid: 09ad7b8bf2a624f3c9c02f1adb0c978c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1527544493}
---- !u!95 &666090578
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 666090572}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3fbd440c04b72ff4eb58f2f711cba795, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1527544493
 Prefab:
   m_ObjectHideFlags: 0
@@ -278,31 +256,6 @@ Prefab:
     - target: {fileID: 4750541192041554, guid: 09ad7b8bf2a624f3c9c02f1adb0c978c, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1830042611948530, guid: 09ad7b8bf2a624f3c9c02f1adb0c978c, type: 2}
-      propertyPath: m_TagString
-      value: Spider
-      objectReference: {fileID: 0}
-    - target: {fileID: 212940661875067158, guid: 09ad7b8bf2a624f3c9c02f1adb0c978c,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5289218bfa54b1046994ad67f9bb4f59,
-        type: 3}
-    - target: {fileID: 212940661875067158, guid: 09ad7b8bf2a624f3c9c02f1adb0c978c,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212940661875067158, guid: 09ad7b8bf2a624f3c9c02f1adb0c978c,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212940661875067158, guid: 09ad7b8bf2a624f3c9c02f1adb0c978c,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09ad7b8bf2a624f3c9c02f1adb0c978c, type: 2}
